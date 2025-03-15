@@ -5,7 +5,7 @@ const App = () => {
       <span>Now I am making some changes</span>
       <p>
         Salon management app that simplifies appointment scheduling, customer management, and daily
-        operations for salon owners and staff.
+        operations
       </p>
     </div>
   );
