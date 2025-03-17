@@ -1,0 +1,32 @@
+[33mcommit fd4c7996c58557b68e51504edb370a5b4c750569[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mdevelop[m[33m, [m[1;31morigin/develop[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: Mucyo Papy Blaise <149539060+Mucyo-Papy-Blaise@users.noreply.github.com>
+Date:   Sun Mar 16 14:56:20 2025 +0200
+
+    Create dependabot.yml
+
+[33mcommit 1c79f222a89e7d8805f19b185ea27f8c5e321be1[m
+Merge: 3627f84 4a45e5a
+Author: Ivad Yves HABIMANA <54445417+Yvad60@users.noreply.github.com>
+Date:   Fri Mar 14 13:13:50 2025 +0200
+
+    Merge pull request #1 from Delta-Rwanda/sf-1/chore/setup-react-project
+    
+    Setup React project
+
+[33mcommit 4a45e5aa780d2d39fed6980e2cea3154153f4910[m
+Author: Ivad Yves HABIMANA <54445417+Yvad60@users.noreply.github.com>
+Date:   Fri Mar 14 13:09:09 2025 +0200
+
+    chore: add pull request template
+
+[33mcommit 1d3137933c8297d265f177ffea4fb1a3af50f6cc[m
+Author: Ivad Yves HABIMANA <54445417+Yvad60@users.noreply.github.com>
+Date:   Fri Mar 14 12:56:35 2025 +0200
+
+    chore: setup react project
+
+[33mcommit 3627f84871f3eeb6a52369bdaba0ca770cb6e0a3[m[33m ([m[1;31morigin/main[m[33m)[m
+Author: Ivad Yves HABIMANA <54445417+Yvad60@users.noreply.github.com>
+Date:   Fri Mar 14 12:48:04 2025 +0200
+
+    Initial commit
