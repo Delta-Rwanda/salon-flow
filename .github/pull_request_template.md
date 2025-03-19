@@ -1,7 +1,3 @@
 ### Description
 
-Add short description about changes implemented
-
-### Related Trello ticket
-
-- Link Trello ticket here
+This Pull request is about setting up prettier in my react project
