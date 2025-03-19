@@ -1,3 +1,7 @@
 ### Description
 
-This Pull request is about setting up prettier in my react project
+Add short description about changes implemented
+
+### Related Trello ticket
+
+- Link Trello ticket here
