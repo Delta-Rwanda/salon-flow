@@ -6,7 +6,14 @@
   
   "scripts": {
     "prepare": "husky install" ,
-    "test": "echo \"No test specified \" && exit 0"
+    "test": "echo \"No test specified \" && exit 0",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "format:check": "prettier --check .",
+    "format:fix": "prettier --write .",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,ts}": [
@@ -24,9 +31,15 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@eslint/js": "^9.22.0",
     "@vitejs/plugin-react": "^4.0.3",
     "husky": "^8.0.0",
     "lint-staged": "^15.5.0",
-    "vite": "^6.2.2"
+    "vite": "^6.2.2",
+    "prettier": "^3.5.3",
+    "eslint": "^9.22.0",
+    "eslint-plugin-react": "^7.37.4",
+    "eslint-plugin-unicorn": "^57.0.0",
+    "globals": "^16.0.0" 
   }
 }
