@@ -4,7 +4,6 @@ import About from './pages/About';
 import NotFound from './pages/NotFound';
 import Navigation from './components/Navigation';
 const App = () => {
-  console.log("Wassup! husky and linte-staged ")
   return (
     <div>
       <Navigation />
