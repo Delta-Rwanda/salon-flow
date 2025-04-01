@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link } from "react-scroll";
 
 function Navigation() {
   return (
@@ -14,3 +14,5 @@ function Navigation() {
     </nav>
   );
 }
+
+export default Navigation
