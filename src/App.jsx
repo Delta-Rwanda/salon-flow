@@ -3,29 +3,28 @@ import Home from './pages/Home';
 import About from './pages/About';
 import NotFound from './pages/NotFound';
 import Navigation from './components/Navigation';
+
 const App = () => {
   return (
     <div>
-      <Navigation />
-      <h1>Salon flow</h1>
-      <p>
-        Salon management app that simplifies appointment scheduling, customer
-        management, and daily operations for salon owners and staff.
-      </p>
-      <button className="bg-blue-500 text-white p-4 rounded">Click Me</button>
       <Router>
+        <Navigation />
+        <h1>Salon flow</h1>
+        <p>
+          Salon management app that simplifies appointment scheduling, customer
+          management, and daily operations for salon owners and staff.
+        </p>
+        <nav>
+          <ul>
+            <li>
+              <a href="/">Home</a>
+            </li>
+            <li>
+              <a href="/about">About</a>
+            </li>
+          </ul>
+        </nav>
         <div>
-          <nav>
-            <ul>
-              <li>
-                <a href="/">Home</a>
-              </li>
-              <li>
-                <a href="/about">About</a>
-              </li>
-            </ul>
-          </nav>
-
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
@@ -36,4 +35,5 @@ const App = () => {
     </div>
   );
 };
+
 export default App;
