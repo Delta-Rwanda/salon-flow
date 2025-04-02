@@ -14,13 +14,16 @@ const App = () => {
           Salon management app that simplifies appointment scheduling, customer
           management, and daily operations for salon owners and staff.
         </p>
+        <button className="bg-blue-500 text-white p-4 rounded">Click ME</button>
         <nav>
           <ul>
             <li>
               <a href="/">Home</a>
             </li>
             <li>
-              <a href="/about">About</a>
+              <a className="text-7xl text-blue-700" href="/about">
+                About
+              </a>
             </li>
           </ul>
         </nav>
