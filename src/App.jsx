@@ -7,14 +7,13 @@ import Navigation from './components/Navigation';
 const App = () => {
   return (
     <div>
+      <Router>
       <Navigation />
       <h1>Salon flow</h1>
       <p>
         Salon management app that simplifies appointment scheduling, customer
         management, and daily operations for salon owners and staff.
       </p>
-      <Router>
-      <div>
         <nav>
           <ul>
             <li>
@@ -25,7 +24,7 @@ const App = () => {
             </li>
           </ul>
         </nav>
-
+      <div>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
@@ -36,4 +35,5 @@ const App = () => {
     </div>
   );
 };
+
 export default App;
