@@ -36,6 +36,7 @@ export default [
       "unicorn/filename-case": "off",
       "react/react-in-jsx-scope": "off",
       "react/jsx-uses-react": "off",
+      "no-console": ["warn", { allow: ["warn", "error"] }]
     },
   },
 ];
