@@ -1,6 +1,6 @@
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
-function Navigation() {
+const Navigation =()=> {
   return (
     <nav>
       <ul>
@@ -14,3 +14,5 @@ function Navigation() {
     </nav>
   );
 }
+
+export default Navigation
