@@ -11,7 +11,8 @@
     "format:fix": "prettier --write .",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
-    "prepare": "husky"
+    "prepare": "husky",
+    "test": ""
   },
   "dependencies": {
     "react": "^18.2.0",
