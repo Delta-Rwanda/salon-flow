@@ -1,12 +1,10 @@
 name: CI/CD Pipeline
 
 on:
-  push:
-    branches:
-      - '**'
   pull_request:
     branches:
       - main
+      - develop
 
 jobs:
   build:
@@ -28,7 +26,4 @@ jobs:
         run: npm run lint
 
       - name: Run Prettier Check
-        run: npx prettier --check .
-
-      - name: Run Tests
-        run: npm test || echo "No tests found"
+        run: npm run format:check

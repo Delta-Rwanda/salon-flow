@@ -9,7 +9,6 @@
     "preview": "vite preview",
     "format:fix": "prettier --write .",
     "format:check": "prettier --check .",
-    "test": "echo \"No tests specified yet\" && exit 0",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
     "prepare": "husky install"
