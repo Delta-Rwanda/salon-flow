@@ -3,6 +3,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import NotFound from './pages/NotFound';
 import Navigation from './components/Navigation';
+import LogIn from './pages/LogIn';
 
 const App = () => {
   return (
@@ -32,6 +33,7 @@ const App = () => {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="*" element={<NotFound />} />
+            <Route path="*" element={<LogIn />} />
           </Routes>
         </div>
       </Router>
