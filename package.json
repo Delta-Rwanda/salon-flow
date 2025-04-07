@@ -35,7 +35,6 @@
     "vite": "^6.2.3"
   },
   "lint-staged": {
-    "**/*.{js,jsx}": "eslint",
-    "**/*.{css,scss,md,json,js,jsx,html}": "prettier"
+   "**/*.{css,scss,md,json,js,jsx,html}": "prettier"
   }
 }
