@@ -1,6 +1,6 @@
 const About = () => {
   return( <div className="bg-black">About Page
-            <h1>Welcome to salon</h1>
+            <h1>Welcome to our  online salon</h1>
           </div>
         )
 };
