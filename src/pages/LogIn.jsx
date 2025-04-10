@@ -1,8 +1,12 @@
 const LogIn = () => {
     return (
-      <div>
-        <h1>LogIn </h1>
-      </div>
+        <form action="">
+            <h1 className="text-[50px]">SALON FLOW</h1>
+            <div>
+
+            </div>
+          
+        </form>   
     );
   };
   
