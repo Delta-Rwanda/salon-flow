@@ -2,11 +2,13 @@
 
 const LogIn = () => {
     return (
-      <div>
-        <h1>Login</h1>
-        <p>please login</p>
-        <input type="text" />
-      </div>
+        <form action="">
+            <h1>SALON FLOW</h1>
+            <div>
+               <input type="text"/>
+            </div>
+        </form>
+      
     );
   };
   
