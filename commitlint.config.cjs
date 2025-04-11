@@ -14,6 +14,6 @@ module.exports = {extends: ['@commitlint/config-conventional'],
         'revert'
       ]
     ],
-    'subject-case': [2, 'always', 'sentence-case']
+    'subject-case': [0]
   }
 };
