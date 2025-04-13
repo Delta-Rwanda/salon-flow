@@ -10,6 +10,7 @@ const App = () => {
     <div>
       <Router>
         <Navigation />
+        
         <h1 className="tex-blue-500">Salon flow</h1>
         <p>
           Salon management app that simplifies appointment scheduling, customer
@@ -33,11 +34,13 @@ const App = () => {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="*" element={<NotFound />} />
-            <Route path="*" element={<LogIn />} />
+            <Route path="/LogIn" element={<LogIn />} />
           </Routes>
         </div>
       </Router>
+      <LogIn/>
     </div>
+    
   );
 };
 
