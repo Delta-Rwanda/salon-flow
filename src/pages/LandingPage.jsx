@@ -1,11 +1,11 @@
 import Footer from '../components/Footer';
-const Home = () => {
+
+const LandingPage = () => {
   return (
     <div>
-      <h1>Home </h1>
       <Footer />
     </div>
   );
 };
 
-export default Home;
+export default LandingPage;

@@ -1,59 +1,120 @@
 import { Link } from 'react-router-dom';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 import { useState } from 'react';
-import { MdLanguage } from 'react-icons/md';
-import { MdLightMode } from 'react-icons/md';
+import { MdLanguage, MdLightMode, MdMenu, MdClose } from 'react-icons/md';
 
 const Navigation = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [name, setName] = useState('English');
+  const [isChevronDown, setIsChevronDown] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [language, setLanguage] = useState('English');
+  const handleOpen = () => setIsChevronDown(!isChevronDown);
+  const toggleMobile = () => setMobileOpen(!mobileOpen);
 
-  const handleOpen = () => {
-    setIsOpen(!isOpen);
-  };
   return (
-    <nav className="flex flex-row justify-around items-center w-full h-16 bg-[#F8F9FA]">
-      <h1>SALON FLOW</h1>
-      <ul className="flex flex-row gap-3">
-        <div className="flex flex-row justify-center items-center">
-          <MdLanguage className="text-black text-3xl" />
-          <p className="text-[#555555] font-medium text-[20px]">
-            <span className="text-[#555555]">{name}</span>
-          </p>
-          <div
-            className=" w-10 h-6 flex flex-col justify-center items-center"
-            onClick={handleOpen}
-          >
-            {isOpen ? (
-              <ChevronDown className="w-10 h-6 text-[#555555]" />
-            ) : (
-              <ChevronUp className="w-10 h-6 text-[#555555]" />
+    <nav className="w-full bg-[#F8F9FA] shadow-md px-4 py-3">
+      <div className="flex justify-between items-center max-w-7xl mx-auto">
+        <h1 className="font-bold text-xl md:text-2xl cursor-pointer">
+          SALON FLOW
+        </h1>
+        <div
+          className="md:hidden text-3xl cursor-pointer"
+          onClick={toggleMobile}
+        >
+          {mobileOpen ? <MdClose /> : <MdMenu />}
+        </div>
+
+        {/* Desktop Menu */}
+        <ul className="hidden md:flex items-center space-x-6">
+          <div className="relative flex items-center space-x-1">
+            <MdLanguage className="text-black text-2xl cursor-pointer" />
+            <p className="text-[#555] font-medium text-lg cursor-pointer">
+              {language}
+            </p>
+            <div className="cursor-pointer" onClick={handleOpen}>
+              {isChevronDown ? (
+                <ChevronDown className="w-5 h-5 text-[#555] hover:text-[#17a2b8]" />
+              ) : (
+                <ChevronUp className="w-5 h-5 text-[#555] hover:text-[#17a2b8]" />
+              )}
+            </div>
+            {isChevronDown && (
+              <div className="absolute top-10 right-0 bg-white w-36 shadow-md rounded-md z-50">
+                {['English', 'French', 'Kinyarwanda'].map((n) => (
+                  <p
+                    key={n}
+                    onClick={() => {
+                      setLanguage(n);
+                      setIsChevronDown(false);
+                    }}
+                    className="py-2 px-4 hover:bg-[#17a2b8] cursor-pointer text-center"
+                  >
+                    {n}
+                  </p>
+                ))}
+              </div>
             )}
           </div>
+          <div className="flex items-center space-x-4">
+            <MdLightMode className="text-2xl hover:text-[#17a2b8] cursor-pointer" />
+            <li className="bg-[#FFB6C1] px-3 py-1 rounded hover:bg-[#17a2b8]">
+              <Link to="/signIn">Sign In</Link>
+            </li>
+            <li className="border-2 border-[#FFB6C1] px-3 py-1 rounded hover:bg-[#17a2b8]">
+              <Link to="/createAccount">Create Account</Link>
+            </li>
+          </div>
+        </ul>
+      </div>
 
-          {isOpen && (
-            <div className="bg-white w-36 p-3 ">
+      {/* Mobile Menu */}
+      {mobileOpen && (
+        <div className="md:hidden mt-4 space-y-3">
+          <div className="flex items-center space-x-2">
+            <MdLanguage className="text-black text-xl cursor-pointer" />
+            <span>{language}</span>
+            <div onClick={handleOpen} className="cursor-pointer">
+              {isChevronDown ? (
+                <ChevronDown className="w-5 h-5 text-[#555]" />
+              ) : (
+                <ChevronUp className="w-5 h-5 text-[#555]" />
+              )}
+            </div>
+          </div>
+          {isChevronDown && (
+            <div className="bg-white w-36 shadow-md rounded-md">
               {['English', 'French', 'Kinyarwanda'].map((n) => (
                 <p
                   key={n}
-                  className="hover:bg-yellow-400 cursor-pointer"
-                  onClick={() => setName(n)}
+                  onClick={() => {
+                    setLanguage(n);
+                    setIsChevronDown(false);
+                  }}
+                  className="py-2 px-4 hover:bg-[#17a2b8] cursor-pointer text-center"
                 >
                   {n}
                 </p>
               ))}
             </div>
           )}
+          <div className="flex flex-col space-y-2">
+            <MdLightMode className="text-2xl hover:text-[#17a2b8] cursor-pointer" />
+            <Link
+              to="/signIn"
+              className="bg-[#FFB6C1] px-3 py-1 rounded hover:bg-[#17a2b8] text-center font-semibold"
+            >
+              Sign In
+            </Link>
+            <Link
+              to="/createAccount"
+              className="border-2 border-[#FFB6C1] px-3 py-1 rounded hover:bg-[#17a2b8] text-center font-semibold"
+            >
+              Create Account
+            </Link>
+          </div>
         </div>
-        <MdLightMode className="text-3xl text-center" />
-        <li className="bg-[#FFB6C1] pr-3 pl-3 pt-0.5 pb-0.5 rounded-md">
-          <Link to="/">Sign In</Link>
-        </li>
-        <li className="border-sold border-[#FFB6C1] border-4 pr-3 pl-3 pt-0.5 pb-0.5 rounded-md">
-          <Link to="/">Create Account</Link>
-        </li>
-      </ul>
+      )}
     </nav>
   );
 };
+
 export default Navigation;
