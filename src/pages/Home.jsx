@@ -97,7 +97,7 @@ const Home = () => {
         'Select your preferred service, date, and time to schedule your appointment.',
     },
     {
-      id: 1,
+      id: 3,
       number: '3',
       icon: <Star />,
       title: 'Enjoy Your Service',
@@ -130,10 +130,10 @@ const Home = () => {
   ];
 
   return (
-    <div className="bg-white container p-5 h-screen mx-auto px-4 md:px-8 lg:px-32">
+    <div className="bg-white container p-5 mx-auto px-4 md:px-8 lg:px-32">
       <div className="flex flex-col  gap-5 pb-10">
         {/* Welcome Images */}
-        <div className="w-full h-[300px] md:h-[550px] rounded-lg overflow-hidden flex justify-center items-center relative">
+        <div className="w-full h-[350px] md:h-[500px] rounded-lg overflow-hidden flex justify-center items-center relative">
           <div className="w-full h-full bg-gradient-to-r from-[#333333]/60 to-transparent z-30 absolute" />
           {images.map((img, index) => (
             <img
@@ -147,8 +147,8 @@ const Home = () => {
           ))}
 
           {/* Welcome Message */}
-          <div className="flex flex-col justify-center items-center z-50 gap-16">
-            <div className="bg-black/50 w-80 md:w-[400px] rounded-lg flex flex-col items-center p-5">
+          <div className="flex flex-col justify-center items-center z-50 gap-5 md:gap-16">
+            <div className="bg-black/50 w-full md:w-[400px] rounded-lg flex flex-col items-center p-5">
               <h1 className="text-white font-bold text-[20px] mb-5">
                 Style your perfect look
               </h1>
@@ -159,32 +159,32 @@ const Home = () => {
             </div>
 
             {/* Search Inputs */}
-            <div className="bg-[#D9D9D9]/50 w-[650px] flex justify-center items-center p-3 rounded-lg gap-4">
+            <div className="bg-[#D9D9D9]/50 w-full md:w-[650px] flex flex-col md:flex-row justify-center items-center p-2 md:p-3 rounded-lg gap-4">
               <SearchInputs
                 placeholder="Search for salons, services..."
                 Icon={Search}
               />
               <SearchInputs placeholder="Location" Icon={MapPin} />
-              <button className="bg-[#DB2777] p-3 w-40 rounded hover:bg-[#be185d] cursor-pointer text-white font-bold">
+              <button className="bg-[#DB2777] p-2 md:p-3 w-full md:w-40 rounded hover:bg-[#be185d] cursor-pointer text-white font-bold">
                 Search
               </button>
             </div>
           </div>
         </div>
+
         {/* How to use salon flow */}
-        <div className="mt-5">
-          <h1 className="text-[#333333] text-2xl text-center font-bold mb-3">
+        <div className="mt-2 md:mt-5">
+          <h1 className="text-[#333333] text-2xl text-center font-bold mb-2 md:mb-3">
             How Salon-Flow Works
           </h1>
           <p className="text-[#333333] font-thin text-center">
             Connecting clients with salons has never been easier
           </p>
-
-          <div className="flex flex-row gap-12 mt-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-12 mt-5 md:mt-10">
             {HowDetails.map((how) => (
               <div
                 key={how.id}
-                className="bg-white w-96 p-4 rounded border-2 border-gray-300 cursor-pointer transition-transform duration-300 hover:-translate-y-2 hover:shadow-lg hover:border-[#DB2777]"
+                className="bg-white w-full md:w-96 p-4 rounded border-2 border-gray-300 cursor-pointer transition-transform duration-300 hover:-translate-y-2 hover:shadow-lg hover:border-[#DB2777]"
               >
                 <div className="flex flex-col">
                   <div className="flex justify-between">
@@ -205,8 +205,8 @@ const Home = () => {
         </div>
 
         {/* Districts */}
-        <div className=" flex flex-col gap-3 mt-5 mb-10">
-          <h1 className="md:text-2xl text-lg text-[#333333] font-bold text-center mb-8">
+        <div className=" flex flex-col gap-3 md:mt-5 mb-3 md:mb-10">
+          <h1 className="md:text-2xl text-lg text-[#333333] font-bold text-center mb-3 md:mb-8">
             Where to Style? Choose Your District!
           </h1>
           <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 w-full">
@@ -239,21 +239,22 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="mb-10">
+        {/* Popular Service */}
+        <div className="mb-5 md:mb-10">
           <h1 className="text-center font-bold text-2xl text-[#333333] mb-3">
             Popular Services
           </h1>
           <p className="text-center font-thin text-[#333333]">
             Hear from salon owners and clients who use Salon-Flow
           </p>
-          <div className="mt-10 flex flex-row gap-4">
+          <div className="mt-5 md:mt-10 grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4">
             {serviceDetails.map((service) => (
               <div
                 key={service.id}
-                className="w-96 p-5 flex flex-col justify-center items-center gap-3 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer"
+                className="w-full md:w-96 p-5 flex flex-col justify-start md:justify-center items-start md:items-center gap-3 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer"
               >
                 <p className="text-[#DB2777]">{service.icon}</p>
-                <h1 className="text-lg font-medium hover:text-[#DB2777]">
+                <h1 className="text-sm md:text-lg font-medium hover:text-[#DB2777]">
                   {service.title}
                 </h1>
               </div>
@@ -294,7 +295,7 @@ const Home = () => {
 
         {/* Common Questions Asked */}
         <div className="flex flex-col gap-3 md:gap-10 mt-3 md:mt-10">
-          <h1 className="text-[25px] text-[#333333] font-bold text-center">
+          <h1 className="text-[25px] text-[#333333] font-bold text-start md:text-center">
             Commonly Asked Questions
           </h1>
           <div className=" grid grid-cols-1 md:grid-cols-2 justify-between gap-5 md:gap-8 mt-3 ">
