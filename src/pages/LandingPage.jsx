@@ -1,11 +1,11 @@
-import Home from "../pages/Home"
+import Home from '../pages/Home';
 
 const LandingPage = () => {
   return (
     <div>
       <Home />
     </div>
-  )
-}
+  );
+};
 
-export default LandingPage
+export default LandingPage;

@@ -37,6 +37,7 @@ export default [
       'react/react-in-jsx-scope': 'off',
       'react/jsx-uses-react': 'off',
       'no-console': ['warn', { allow: ['warn', 'error'] }],
+      'react/prop-types': 'off',
     },
   },
 ];
