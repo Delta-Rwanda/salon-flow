@@ -31,7 +31,7 @@ const LogIn = () => {
                             type="email"
                             //value={email}
                             //onChange
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#505050] bg-[#F4F4F4]"
+                            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#505050] bg-[#F4F4F4]"
                             required
                         />
                     </div>
@@ -44,7 +44,7 @@ const LogIn = () => {
                             type="password"
                             //value={password}
                             //onChange
-                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#505050] bg-[#F4F4F4]"
+                            className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#505050] bg-[#F4F4F4]"
                             required
                         />
                     </div>
@@ -72,18 +72,18 @@ const LogIn = () => {
                     <div className="flex-grow border-t border-gray-300"></div>
                 </div>
 
-                {/* Sign In Button  */}
+                {/* Sign In Button With Google */}
                 <button
                     type="button"
                     className="w-full flex items-center justify-center bg-gray-900 text-white py-3 rounded-md hover:bg-gray-800 transition duration-200"
                 >
-                <span className="pr-6 ">
-                    {<FcGoogle size={30}/>}
-                </span>
-                <p className="text-xl font-semibold">
-                    Continue with Google
+                    <span className="pr-6 ">
+                        {<FcGoogle size={30} />}
+                    </span>
+                    <p className="text-xl font-semibold">
+                        Continue with Google
 
-                </p>
+                    </p>
                 </button>
 
                 {/* Sign Up Link */}
