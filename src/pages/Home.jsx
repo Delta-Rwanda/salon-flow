@@ -218,7 +218,7 @@ const Home = () => {
                 <div className="w-full h-64 overflow-hidden">
                   <img
                     src={district.image}
-                    alt=""
+                    alt={district.title}
                     className="w-full h-full object-cover hover:opacity-40"
                   />
                 </div>
@@ -247,11 +247,11 @@ const Home = () => {
           <p className="text-center font-thin text-[#333333]">
             Hear from salon owners and clients who use Salon-Flow
           </p>
-          <div className="mt-5 md:mt-10 grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-4">
+          <div className="mt-5 md:mt-10 grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-8">
             {serviceDetails.map((service) => (
               <div
                 key={service.id}
-                className="w-full md:w-96 p-5 flex flex-col justify-start md:justify-center items-start md:items-center gap-3 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer"
+                className="w-full md:w-60 p-5 flex flex-col justify-start md:justify-center items-start md:items-center gap-3 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer"
               >
                 <p className="text-[#DB2777]">{service.icon}</p>
                 <h1 className="text-sm md:text-lg font-medium hover:text-[#DB2777]">
