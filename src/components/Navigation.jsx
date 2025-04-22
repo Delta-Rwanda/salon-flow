@@ -56,10 +56,12 @@ const Navigation = () => {
           </div>
           <div className="flex items-center space-x-4">
             <MdLightMode className="text-2xl hover:text-[#17a2b8] cursor-pointer" />
-            <li className="bg-[#FFB6C1] px-3 py-1 rounded hover:bg-[#17a2b8]">
-              <Link to="/signIn">Sign In</Link>
+            <li className="bg-[#DB2777] px-3 py-1 rounded hover:bg-[#FFB6C1]">
+              <Link className="text-[#E6E6FA] hover:text-black" to="/signIn">
+                Sign In
+              </Link>
             </li>
-            <li className="border-2 border-[#FFB6C1] px-3 py-1 rounded hover:bg-[#17a2b8]">
+            <li className="border-2 border-[#FFB6C1] px-3 py-1 rounded hover:bg-[#FFB6C1]">
               <Link to="/createAccount">Create Account</Link>
             </li>
           </div>
@@ -100,13 +102,13 @@ const Navigation = () => {
             <MdLightMode className="text-2xl hover:text-[#17a2b8] cursor-pointer" />
             <Link
               to="/signIn"
-              className="bg-[#FFB6C1] px-3 py-1 rounded hover:bg-[#17a2b8] text-center font-semibold"
+              className="bg-[#DB2777] px-3 py-1 rounded hover:bg-[#FFB6C1] text-center font-semibold text-[#E6E6FA] hover:text-black"
             >
               Sign In
             </Link>
             <Link
               to="/createAccount"
-              className="border-2 border-[#FFB6C1] px-3 py-1 rounded hover:bg-[#17a2b8] text-center font-semibold"
+              className="border-2 border-[#FFB6C1] px-3 py-1 rounded hover:bg-[#FFB6C1] text-center font-semibold"
             >
               Create Account
             </Link>
