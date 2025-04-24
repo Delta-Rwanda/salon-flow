@@ -1,4 +1,4 @@
-import { FaFacebookF, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
+import { Facebook, Instagram, Linkedin } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
@@ -18,12 +18,12 @@ const Footer = () => {
               target="_blank"
               className="bg-[#F8F9FA] p-1 rounded text-sm text-[#1a1a2e] hover:bg-blue-700 hover:text-white"
             >
-              <FaFacebookF />
+              <Facebook />
             </Link>
             <Link
               to="https://twitter.com"
               target="_blank"
-              className="bg-[#F8F9FA] rounded text-sm w-5 text-center text-[#1a1a2e] hover:bg-blue-700 hover:text-white"
+              className="bg-[#F8F9FA] rounded text-2xl w-8 text-center text-[#1a1a2e] hover:bg-blue-700 hover:text-white"
             >
               𝕏
             </Link>
@@ -32,14 +32,14 @@ const Footer = () => {
               target="_blank"
               className="bg-[#F8F9FA] p-1 rounded text-sm text-[#1a1a2e] hover:bg-blue-700 hover:text-white"
             >
-              <FaInstagram />
+              <Instagram />
             </Link>
             <Link
               to="https://linkedin.com"
               target="_blank"
               className="bg-[#F8F9FA] p-1 rounded text-sm text-[#1a1a2e] hover:bg-blue-700 hover:text-white"
             >
-              <FaLinkedinIn />
+              <Linkedin />
             </Link>
           </div>
         </div>

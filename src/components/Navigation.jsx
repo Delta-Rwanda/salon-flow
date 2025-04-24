@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
-import { ChevronDown, ChevronUp } from 'lucide-react';
+import { ChevronDown, ChevronUp, Globe, Sun, Menu, X } from 'lucide-react';
 import { useState } from 'react';
-import { MdLanguage, MdLightMode, MdMenu, MdClose } from 'react-icons/md';
 
 const Navigation = () => {
   const [isChevronDown, setIsChevronDown] = useState(false);
@@ -20,13 +19,13 @@ const Navigation = () => {
           className="md:hidden text-3xl cursor-pointer"
           onClick={toggleMobile}
         >
-          {mobileOpen ? <MdClose /> : <MdMenu />}
+          {mobileOpen ? <X /> : <Menu />}
         </div>
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex items-center space-x-6">
           <div className="relative flex items-center space-x-1">
-            <MdLanguage className="text-black text-2xl cursor-pointer" />
+            <Globe className="text-black text-2xl cursor-pointer" />
             <p className="text-[#555] font-medium text-lg cursor-pointer">
               {language}
             </p>
@@ -55,7 +54,7 @@ const Navigation = () => {
             )}
           </div>
           <div className="flex items-center space-x-4">
-            <MdLightMode className="text-2xl hover:text-[#17a2b8] cursor-pointer" />
+            <Sun className="text-2xl hover:text-[#17a2b8] cursor-pointer" />
             <li className="bg-[#DB2777] px-3 py-1 rounded hover:bg-[#FFB6C1]">
               <Link className="text-[#E6E6FA] hover:text-black" to="/signIn">
                 Sign In
@@ -72,7 +71,7 @@ const Navigation = () => {
       {mobileOpen && (
         <div className="md:hidden mt-4 space-y-3">
           <div className="flex items-center space-x-2">
-            <MdLanguage className="text-black text-xl cursor-pointer" />
+            <Globe className="text-black text-xl cursor-pointer" />
             <span>{language}</span>
             <div onClick={handleOpen} className="cursor-pointer">
               {isChevronDown ? (
@@ -99,7 +98,7 @@ const Navigation = () => {
             </div>
           )}
           <div className="flex flex-col space-y-2">
-            <MdLightMode className="text-2xl hover:text-[#17a2b8] cursor-pointer" />
+            <Sun className="text-2xl hover:text-[#17a2b8] cursor-pointer" />
             <Link
               to="/signIn"
               className="bg-[#DB2777] px-3 py-1 rounded hover:bg-[#FFB6C1] text-center font-semibold text-[#E6E6FA] hover:text-black"
