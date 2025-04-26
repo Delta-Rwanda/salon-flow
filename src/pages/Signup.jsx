@@ -1,117 +1,135 @@
-import {useState} from 'react';
+import { useState } from 'react';
 
 const Signup = () => {
-    const [name,setName] = useState('');
-    const [email,setEmail] = useState('');
-    const [password,setPassword] = useState('');
-    const [confirmPassword,setConfirmPassword] = useState('');
-    const [error, setError] = useState('');
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [error, setError] = useState('');
 
-    const handleSubmit = (event) =>{
-        event.preventDefault();
-        if(password===confirmPassword){
-           alert("You successfully created an account!")
-        }
-        else{
-         setError("Password and confirm password are not the same!")
-          return;
-        }
-      }
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    if (password === confirmPassword) {
+      alert('You successfully created an account!');
+    } else {
+      setError('Password and confirm password are not the same!');
+    }
+  };
+
   return (
-    <div>
-        <div className="flex items-center justify-center min-h-screen bg-gray-100">
-       <div className="flex flex-col items-start px-6 w-full max-w-lg">
-       <h2 className="text-2xl font-bold mb-2 text-center sm:text-3xl">SALON FLOW</h2>
-    <h3 className="text-sm font-bold mb-2 text-center sm:text-base">Account Signup-Form</h3>
-    <h4 className="italic mb-4 text-center sm:text-base">
-      Already have an account?{' '}
-      <a href="/signin" className="text-red-500 hover:underline">
-        Sign in
-      </a>
-    </h4>
-    {error && <p className="text-red-500 text-center mb-4">{error}</p>}
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 px-4 sm:px-6">
+      {/* Card */}
+      <div className="bg-white shadow-xl rounded-lg w-full max-w-[420px]">
+        <div className="w-full px-6 sm:px-8 md:px-10 py-8 sm:py-10">
+          {' '}
+          {/* Responsive padding */}
+          <h2 className="text-base sm:text-lg font-bold mb-1 text-left">
+            SALON FLOW
+          </h2>
+          <h3 className="text-sm sm:text-base font-semibold mb-1 text-left">
+            Account Signup-Form
+          </h3>
+          <h4 className="italic text-xs sm:text-sm mb-3 text-left">
+            Already have an account?{' '}
+            <a href="/signin" className="text-red-500 hover:underline">
+              Sign in
+            </a>
+          </h4>
+          {error && (
+            <p className="text-red-500 text-sm text-left mb-3">{error}</p>
+          )}
+          <form onSubmit={handleSubmit} className="w-full">
+            <div className="mb-3">
+              <label htmlFor="name" className="text-sm font-medium">
+                Name
+              </label>
+              <input
+                type="text"
+                id="name"
+                value={name}
+                onChange={(event) => setName(event.target.value)}
+                required
+                className="w-full p-2 mt-1 border border-gray-400 rounded-md text-sm focus:outline-none bg-gray-100"
+              />
+            </div>
 
-    {/* Form container */}
-    <form onSubmit={handleSubmit} className="h-auto w-full sm:w-72 bg-white rounded shadow-2xl justify-start items-center px-4 py-4">
-      {/* Name input */}
-      <div id="name-input">
-        <label htmlFor="name">Enter your name:</label>
-        <input
-          type="text"
-          id="name"
-          value={name}
-          onChange={(event) => setName(event.target.value)}
-          required
-          className="border-gray-500 border-solid border-1 rounded-md w-full p-1 mt-2 cursor-pointer hover:bg-gray-200 focus:outline-none"
-        />
+            <div className="mb-3">
+              <label htmlFor="email" className="text-sm font-medium">
+                Email
+              </label>
+              <input
+                type="email"
+                id="email"
+                value={email}
+                onChange={(event) => setEmail(event.target.value)}
+                required
+                className="w-full p-2 mt-1 border border-gray-400 rounded-md text-sm focus:outline-none bg-gray-100"
+              />
+            </div>
+
+            <div className="mb-3">
+              <label htmlFor="password" className="text-sm font-medium">
+                Password
+              </label>
+              <input
+                type="password"
+                id="password"
+                value={password}
+                onChange={(event) => setPassword(event.target.value)}
+                required
+                className="w-full p-2 mt-1 border border-gray-400 rounded-md text-sm focus:outline-none bg-gray-100"
+              />
+            </div>
+
+            <div className="mb-4">
+              <label htmlFor="confirm-password" className="text-sm font-medium">
+                Confirm Password
+              </label>
+              <input
+                type="password"
+                id="confirm-password"
+                value={confirmPassword}
+                onChange={(event) => setConfirmPassword(event.target.value)}
+                required
+                className="w-full p-2 mt-1 border border-gray-400 rounded-md text-sm focus:outline-none bg-gray-100"
+              />
+            </div>
+
+            <button
+              type="submit"
+              className="w-full bg-pink-400 text-sm rounded font-bold mt-3 py-2 hover:bg-slate-600 hover:text-white transition-colors"
+            >
+              Sign up
+            </button>
+
+            <div className="flex items-center my-4">
+              <div className="flex-grow border-t border-gray-400"></div>
+              <span className="mx-3 text-xs font-semibold">OR</span>
+              <div className="flex-grow border-t border-gray-400"></div>
+            </div>
+
+            <button className="w-full bg-slate-900 text-white rounded text-sm font-bold py-2 flex items-center justify-center hover:bg-blue-400 transition-colors">
+              <img
+                src="/assets/Google.png"
+                alt="Google Logo"
+                className="w-5 h-5 mr-8"
+              />
+              Continue with Google
+            </button>
+          </form>
+        </div>
       </div>
 
-      {/* Email input */}
-      <div id="email-input">
-        <label htmlFor="email">Enter your email:</label>
-        <input
-          type="email"
-          id="email"
-          value={email}
-          onChange={(event) => setEmail(event.target.value)}
-          required
-          className="border-gray-500 border-solid border-1 rounded-md w-full p-1 mt-2 cursor-pointer hover:bg-gray-200 focus:outline-none"
-        />
-      </div>
-
-      {/* Password input */}
-      <div id="password-input">
-        <label htmlFor="password">Enter your password:</label>
-        <input
-          type="password"
-          id="password"
-          value={password}
-          onChange={(event) => setPassword(event.target.value)}
-          required
-          className="border-gray-500 border-solid border-1 rounded-md w-full p-1 mt-2 cursor-pointer hover:bg-gray-200 focus:outline-none"
-        />
-      </div>
-
-      {/* Confirm password input */}
-      <div id="confirmPassword-input">
-        <label htmlFor="confirm-password">Confirm your password:</label>
-        <input
-          type="password"
-          id="confirm-password"
-          value={confirmPassword}
-          onChange={(event) => setConfirmPassword(event.target.value)}
-          required
-          className="border-gray-500 border-solid border-1 rounded-md w-full p-1 mt-2 cursor-pointer hover:bg-gray-200 focus:outline-none"
-        />
-      </div>
-
-      <button
-        type="submit"
-        className="border-gray-500 w-full bg-pink-400 rounded text-center font-bold mt-5 p-1 hover:bg-slate-600 hover:text-white"
-      >
-        Sign up
-      </button>
-
-      <div className="flex items-center my-4">
-        <div className="border-t border-gray-400 flex-grow"></div>
-        <span className="mx-4 text-sm font-semibold">OR</span>
-        <div className="border-t border-gray-400 flex-grow"></div>
-      </div>
-
-      <button className="border-gray-500 w-full bg-slate-900 text-white rounded text-center text-sm font-bold mt-2 p-2 flex items-center justify-center hover:bg-blue-400">
-        <img
-          src="/assets/GoogleImg.png"
-          alt="Google Logo"
-          className="w-5 h-5 mr-2"
-        />
-        Continue with Google
-      </button>
-    </form>
-  </div>
+      {/* Footer below the card */}
+      <footer className="mt-4 text-center text-[10px] sm:text-[8px] text-gray-500 leading-tight max-w-[420px] px-6 sm:px-10">
+        <p>
+          SalonFlow is part of SalonFlow Inc., the leading online platform for
+          salon booking and time-saving services. © 2025 SalonFlow. All rights
+          reserved.
+        </p>
+      </footer>
     </div>
-</div>
-    
-  )
-}
+  );
+};
 
-export default Signup
+export default Signup;
