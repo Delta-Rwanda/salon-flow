@@ -1,5 +1,5 @@
-import { Facebook, Instagram, Linkedin } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import SocialMedia from './SocialMedia';
 
 const Footer = () => {
   const year = new Date().getFullYear();
@@ -12,36 +12,7 @@ const Footer = () => {
             The premier platform connecting clients with top salons in their
             area. Find, book, and enjoy salon services with ease.
           </p>
-          <div className="flex gap-2">
-            <Link
-              to="https://facebook.com"
-              target="_blank"
-              className="bg-[#F8F9FA] p-1 rounded text-sm text-[#1a1a2e] hover:bg-blue-700 hover:text-white"
-            >
-              <Facebook />
-            </Link>
-            <Link
-              to="https://twitter.com"
-              target="_blank"
-              className="bg-[#F8F9FA] rounded text-2xl w-8 text-center text-[#1a1a2e] hover:bg-blue-700 hover:text-white"
-            >
-              𝕏
-            </Link>
-            <Link
-              to="https://instagram.com"
-              target="_blank"
-              className="bg-[#F8F9FA] p-1 rounded text-sm text-[#1a1a2e] hover:bg-blue-700 hover:text-white"
-            >
-              <Instagram />
-            </Link>
-            <Link
-              to="https://linkedin.com"
-              target="_blank"
-              className="bg-[#F8F9FA] p-1 rounded text-sm text-[#1a1a2e] hover:bg-blue-700 hover:text-white"
-            >
-              <Linkedin />
-            </Link>
-          </div>
+          <SocialMedia />
         </div>
         <div className="flex flex-col gap-2">
           <h2 className="text-xl font-bold">For Clients</h2>

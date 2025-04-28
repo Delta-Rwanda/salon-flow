@@ -1,5 +1,13 @@
 import { Link } from 'react-router-dom';
-import { ChevronDown, ChevronUp, Globe, Sun, Menu, X } from 'lucide-react';
+import {
+  ChevronDown,
+  ChevronUp,
+  Globe,
+  Sun,
+  Menu,
+  X,
+  Moon,
+} from 'lucide-react';
 import { useState } from 'react';
 
 const Navigation = () => {
@@ -8,6 +16,10 @@ const Navigation = () => {
   const [language, setLanguage] = useState('English');
   const handleOpen = () => setIsChevronDown(!isChevronDown);
   const toggleMobile = () => setMobileOpen(!mobileOpen);
+  const [isDarkMode, setIsDarkMode] = useState(false);
+  const toggleTheme = () => {
+    setIsDarkMode(!isDarkMode);
+  };
 
   return (
     <nav className="w-full bg-[#F8F9FA] shadow-md px-4 py-3">
@@ -54,7 +66,13 @@ const Navigation = () => {
             )}
           </div>
           <div className="flex items-center space-x-4">
-            <Sun className="text-2xl hover:text-[#17a2b8] cursor-pointer" />
+            <div onClick={toggleTheme}>
+              {isDarkMode ? (
+                <Moon className="text-2xl hover:text-[#17a2b8] cursor-pointer" />
+              ) : (
+                <Sun className="text-2xl hover:text-[#17a2b8] cursor-pointer" />
+              )}
+            </div>
             <li className="bg-[#DB2777] px-3 py-1 rounded hover:bg-[#FFB6C1]">
               <Link className="text-[#E6E6FA] hover:text-black" to="/signIn">
                 Sign In
@@ -98,7 +116,13 @@ const Navigation = () => {
             </div>
           )}
           <div className="flex flex-col space-y-2">
-            <Sun className="text-2xl hover:text-[#17a2b8] cursor-pointer" />
+            <div onClick={toggleTheme}>
+              {isDarkMode ? (
+                <Moon className="text-2xl hover:text-[#17a2b8] cursor-pointer" />
+              ) : (
+                <Sun className="text-2xl hover:text-[#17a2b8] cursor-pointer" />
+              )}
+            </div>
             <Link
               to="/signIn"
               className="bg-[#DB2777] px-3 py-1 rounded hover:bg-[#FFB6C1] text-center font-semibold text-[#E6E6FA] hover:text-black"
