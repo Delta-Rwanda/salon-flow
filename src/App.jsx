@@ -10,8 +10,8 @@ const App = () => {
     <div>
       <Router>
         <Navigation />
-        
-        <h1 className="tex-blue-500">Salon flow</h1>
+
+        {/* <h1 className="tex-blue-500">Salon flow</h1>
         <p>
           Salon management app that simplifies appointment scheduling, customer
           management, and daily operations for salon owners and staff.
@@ -28,7 +28,7 @@ const App = () => {
               </a>
             </li>
           </ul>
-        </nav>
+        </nav> */}
         <div>
           <Routes>
             <Route path="/" element={<Home />} />
@@ -38,9 +38,8 @@ const App = () => {
           </Routes>
         </div>
       </Router>
-      <LogIn/>
+      <LogIn />
     </div>
-    
   );
 };
 
