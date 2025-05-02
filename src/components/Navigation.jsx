@@ -17,12 +17,13 @@ const Navigation = () => {
   const handleOpen = () => setIsChevronDown(!isChevronDown);
   const toggleMobile = () => setMobileOpen(!mobileOpen);
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const languages = ['English', 'French', 'Kinyarwanda'];
   const toggleTheme = () => {
     setIsDarkMode(!isDarkMode);
   };
 
   return (
-    <nav className="w-full bg-[#F8F9FA] shadow-md px-4 py-3">
+    <nav className="w-full bg-[#F8F9FA] shadow-md px-4 py-3 font-poppins">
       <div className="flex justify-between items-center max-w-7xl mx-auto">
         <h1 className="font-bold text-xl md:text-2xl cursor-pointer">
           SALON FLOW
@@ -50,7 +51,7 @@ const Navigation = () => {
             </div>
             {isChevronDown && (
               <div className="absolute top-10 right-0 bg-white w-36 shadow-md rounded-md z-50">
-                {['English', 'French', 'Kinyarwanda'].map((n) => (
+                {languages.map((n) => (
                   <p
                     key={n}
                     onClick={() => {
@@ -101,7 +102,7 @@ const Navigation = () => {
           </div>
           {isChevronDown && (
             <div className="bg-white w-36 shadow-md rounded-md">
-              {['English', 'French', 'Kinyarwanda'].map((n) => (
+              {languages.map((n) => (
                 <p
                   key={n}
                   onClick={() => {

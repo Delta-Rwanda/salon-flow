@@ -1,11 +1,7 @@
 import Footer from '../components/Footer';
 
 const LandingPage = () => {
-  return (
-    <div>
-      <Footer />
-    </div>
-  );
+  return <Footer />;
 };
 
 export default LandingPage;
