@@ -46,7 +46,7 @@ const Signup = () => {
   }, [name, email, password, confirmPassword]);
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 px-4 sm:px-6">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 px-4 sm:px-6 font-poppins">
       <div className="bg-white shadow-xl rounded-lg w-full max-w-[420px] lg:max-w-[600px] xl:max-w-[700px] transition-all duration-300">
         <div className="w-full px-6 sm:px-8 md:px-10 py-8 sm:py-10">
           {/* Aligned header section */}
