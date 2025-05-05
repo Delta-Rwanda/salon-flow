@@ -31,12 +31,7 @@ const SocialMedia = () => {
   return (
     <div className="flex gap-2 font-poppins">
       {socialLinks.map((item, index) => (
-        <Link
-          key={index}
-          to={item.url}
-          target="_blank"
-          className={item.classes}
-        >
+        <Link key={index} to={item.url} className={item.classes}>
           {item.icon}
         </Link>
       ))}

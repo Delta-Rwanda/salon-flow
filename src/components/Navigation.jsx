@@ -51,16 +51,16 @@ const Navigation = () => {
             </div>
             {isChevronDown && (
               <div className="absolute top-10 right-0 bg-white w-36 shadow-md rounded-md z-50">
-                {languages.map((n) => (
+                {languages.map((language) => (
                   <p
-                    key={n}
+                    key={language}
                     onClick={() => {
-                      setLanguage(n);
+                      setLanguage(language);
                       setIsChevronDown(false);
                     }}
                     className="py-2 px-4 hover:bg-[#17a2b8] cursor-pointer text-center"
                   >
-                    {n}
+                    {language}
                   </p>
                 ))}
               </div>
@@ -75,12 +75,12 @@ const Navigation = () => {
               )}
             </div>
             <li className="bg-[#DB2777] px-3 py-1 rounded hover:bg-[#FFB6C1]">
-              <Link className="text-[#E6E6FA] hover:text-black" to="/signIn">
+              <Link className="text-[#E6E6FA] hover:text-black" to="/sign-in">
                 Sign In
               </Link>
             </li>
             <li className="border-2 border-[#FFB6C1] px-3 py-1 rounded hover:bg-[#FFB6C1]">
-              <Link to="/createAccount">Create Account</Link>
+              <Link to="/create-account">Create Account</Link>
             </li>
           </div>
         </ul>
@@ -102,16 +102,16 @@ const Navigation = () => {
           </div>
           {isChevronDown && (
             <div className="bg-white w-36 shadow-md rounded-md">
-              {languages.map((n) => (
+              {languages.map((language) => (
                 <p
-                  key={n}
+                  key={language}
                   onClick={() => {
-                    setLanguage(n);
+                    setLanguage(language);
                     setIsChevronDown(false);
                   }}
                   className="py-2 px-4 hover:bg-[#17a2b8] cursor-pointer text-center"
                 >
-                  {n}
+                  {language}
                 </p>
               ))}
             </div>
@@ -125,13 +125,13 @@ const Navigation = () => {
               )}
             </div>
             <Link
-              to="/signIn"
+              to="/sign-in"
               className="bg-[#DB2777] px-3 py-1 rounded hover:bg-[#FFB6C1] text-center font-semibold text-[#E6E6FA] hover:text-black"
             >
               Sign In
             </Link>
             <Link
-              to="/createAccount"
+              to="/create-account"
               className="border-2 border-[#FFB6C1] px-3 py-1 rounded hover:bg-[#FFB6C1] text-center font-semibold"
             >
               Create Account

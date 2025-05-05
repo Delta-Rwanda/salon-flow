@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import SocialMedia from './SocialMedia';
 import Button from './Button';
@@ -12,6 +13,40 @@ const Footer = () => {
     'Manage Account',
     'Write Reviews',
   ];
+  const [email, setEmail] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState('');
+  const [success, setSuccess] = useState('');
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setError('');
+    setSuccess('');
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      setError('Please enter a valid email address.');
+      return;
+    }
+
+    setLoading(true);
+    setTimeout(() => {
+      setSuccess('You are successfully subscribed!');
+      setLoading(false);
+      setEmail('');
+    }, 1000);
+  };
+
+  // Clear success message after 3 seconds
+  useEffect(() => {
+    if (success) {
+      const timer = setTimeout(() => {
+        setSuccess('');
+      }, 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [success]);
+
   return (
     <footer className="w-full bg-[#555555] text-[#E6E6FA] space-y-10 px-4 py-10 font-poppins">
       <div className="max-w-6xl mx-auto flex flex-col  md:flex-row space-y-5 sm:space-y-5 md:space-y-1 md:justify-between">
@@ -31,7 +66,6 @@ const Footer = () => {
                 key={id}
                 className="hover:text-[#17a2b8] hover:underline"
                 to="*"
-                target="_blank"
               >
                 {service}
               </Link>
@@ -51,9 +85,24 @@ const Footer = () => {
         <p className="text-[#E6E6FA] md:text-lg text-sm">
           Send me tips, trends, updates & offers
         </p>
-        <form className="flex flex-col md:bg-[#9894B1] p-2 md:p-0 sm:p-2 rounded-md sm:flex-row items-center sm:bg-amber-50 bg-amber-50 sm:gap-2 gap-2 md:gap-0 w-full md:max-w-[360px]">
-          <Input />
-          <Button />
+        {error && (
+          <p className="text-red-500 text-sm text-left mb-3">{error}</p>
+        )}
+        {success && (
+          <p className="text-green-500 text-sm text-left mb-3">{success}</p>
+        )}
+        <form
+          onSubmit={handleSubmit}
+          className="flex flex-col md:bg-[#9894B1] p-2 md:p-0 sm:p-2 rounded-md sm:flex-row items-center sm:bg-amber-50 bg-amber-50 sm:gap-2 gap-2 md:gap-0 w-full md:max-w-[360px]"
+        >
+          <Input
+            type="email"
+            required
+            placeholder="Enter your email"
+            value={email}
+            onChange={(event) => setEmail(event.target.value)}
+          />
+          <Button label={loading ? 'Loading...' : 'Subscribe'} type="submit" />
         </form>
       </div>
       <div className="text-center text-sm px-4">
