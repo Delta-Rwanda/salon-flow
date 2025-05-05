@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import FormInput from '../components/FormInput';
+import Button from '../components/Button';
 
 const Signup = () => {
   const [name, setName] = useState('');
@@ -108,17 +109,17 @@ const Signup = () => {
               />
 
               {/*button to handle form submission */}
-              <button
+              <Button
                 type="submit"
                 disabled={loading}
-                className={`w-full ${
+                className={
                   loading
-                    ? 'bg-gray-400 cursor-not-allowed'
-                    : 'bg-pink-400 hover:bg-slate-600 hover:text-white'
-                } text-sm rounded font-bold mt-3 py-2 transition-colors`}
+                    ? 'bg-gray-400'
+                    : 'bg-pink-400 hover:bg-slate-600 hover:text-white mt-8'
+                }
               >
                 {loading ? 'Creating Account...' : 'Sign up'}
-              </button>
+              </Button>
 
               <div className="flex items-center my-4">
                 <div className="flex-grow border-t border-gray-400"></div>
@@ -126,14 +127,18 @@ const Signup = () => {
                 <div className="flex-grow border-t border-gray-400"></div>
               </div>
 
-              <button className="w-full bg-slate-900 text-white rounded text-xs sm:text-sm font-bold py-2 flex items-center justify-center hover:bg-blue-400 transition-colors">
-                <img
-                  src="/assets/Google.png"
-                  alt="Google Logo"
-                  className="w-5 h-5 mr-3 sm:mr-8"
-                />
+              <Button
+                className="bg-slate-900 text-white hover:bg-blue-400 text-xs sm:text-sm"
+                icon={
+                  <img
+                    src="/assets/Google.png"
+                    alt="Google Logo"
+                    className="w-5 h-5"
+                  />
+                }
+              >
                 <span className="hidden sm:inline">Continue with Google</span>
-              </button>
+              </Button>
             </div>
           </form>
         </div>
