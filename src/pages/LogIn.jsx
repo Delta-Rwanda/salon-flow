@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { FcGoogle } from 'react-icons/fc';
 
+
 const LogIn = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -48,7 +49,7 @@ const LogIn = () => {
 
   return (
     <>
-    <div className="flex items-center justify-center min-h-screen bg-[#F4F4F4] p-4 font-poppins">
+    <div className=" flex items-center justify-center min-h-screen bg-[#F4F4F4] p-4 font-poppins">
       <div className="bg-white w-full max-w-md rounded-lg shadow-sm p-6 sm:p-8">
         {/*Title */}
         <h1 className="text-2xl font-medium text-gray-800 mb-6">SALON FLOW</h1>
@@ -145,15 +146,18 @@ const LogIn = () => {
           </p>
         </div>
       </div>
+      
+    </div>
+    <div className="bg-[#F4F4F4] flex items-center justify-center" >
+           <p className='pb-5 w-[600px] h-[50px] flex  justify-center'>
+              SalonFlow is part of SalonFlow Inc., the leading online 
+              platform for salon booking and time-saving services.
+              Copyright &copy; 2025 SalonFlow. All rights reserved.
+              
+           </p>
+    </div>
     
-    </div>
-    <div className="bg-[#F4F4F4] items justify-center" >
-      <p>SalonFlow is part of SalonFlow Inc., the leading online 
-      platform for salon booking and time-saving services.
-      Copyright &copy; 2025 SalonFlow. All rights reserved.
-    </p>
-    </div>
-    </>
+  </>
   );
 };
 
