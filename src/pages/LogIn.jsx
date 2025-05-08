@@ -149,10 +149,11 @@ const LogIn = () => {
           </div>
         </div>
       </div>
-      <div className="bg-[#F4F4F4] flex items-center justify-center my-[-60px] ">
-        <p className="pb-5 w-[904px] h-[49px] flex  justify-center text-[14px] text-[#505050]">
+      <div className="bg-[#F4F4F4] flex items-center justify-center my-[-60px] px-4 py-5 w-full">
+        <p className="max-w-[904px] text-center text-[14px] text-[#505050] font-light leading-6">
           SalonFlow is part of SalonFlow Inc., the leading online platform for
-          salon booking and time-saving services.<br></br>
+          salon booking and time-saving services.
+          <br />
           Copyright &copy; 2025 SalonFlow. All rights reserved.
         </p>
       </div>
