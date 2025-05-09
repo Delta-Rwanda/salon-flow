@@ -37,7 +37,7 @@ const Navigation = () => {
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex items-center space-x-6">
-          <div className="relative flex items-center space-x-1">
+          <li className="relative flex items-center space-x-1">
             <Globe className="text-black text-2xl cursor-pointer" />
             <p className="text-[#555] font-medium text-lg cursor-pointer">
               {language}
@@ -65,8 +65,8 @@ const Navigation = () => {
                 ))}
               </div>
             )}
-          </div>
-          <div className="flex items-center space-x-4">
+          </li>
+          <li className="flex items-center space-x-4">
             <div onClick={toggleTheme}>
               {isDarkMode ? (
                 <Moon className="text-2xl hover:text-[#17a2b8] cursor-pointer" />
@@ -82,7 +82,7 @@ const Navigation = () => {
             <li className="border-2 border-[#FFB6C1] px-3 py-1 rounded hover:bg-[#FFB6C1]">
               <Link to="/create-account">Create Account</Link>
             </li>
-          </div>
+          </li>
         </ul>
       </div>
 
