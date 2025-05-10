@@ -1,7 +1,8 @@
+
 import InputField from '../components/InputField';
 import GoogleSignButton from '../components/GoogleSignButton';
 import { useState } from 'react';
-import { FcGoogle } from 'react-icons/fc';
+import GoogleIcon from '../images/GoogleIcon.png'
 import SignInButton from '../components/SignInButton';
 
 const LogIn = () => {
@@ -129,7 +130,7 @@ const LogIn = () => {
 
           {/* Sign In With Google Button */}
           <GoogleSignButton type="button">
-            <FcGoogle className="mr-2 text-lg" />
+            <img src={GoogleIcon} alt="Google logo" className="h-[30px] w-[30px]" />
             <span className="text-sm font-medium">Continue with Google</span>
           </GoogleSignButton>
 
