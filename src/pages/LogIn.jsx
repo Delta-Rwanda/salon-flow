@@ -130,7 +130,7 @@ const LogIn = () => {
 
           {/* Sign In With Google Button */}
           <GoogleSignButton type="button">
-            <img src={GoogleIcon} alt="Google logo" className="h-[30px] w-[30px]" />
+            <img src={GoogleIcon} alt="Google logo" className=" mr-3 h-[30px] w-[30px]" />
             <span className="text-sm font-medium">Continue with Google</span>
           </GoogleSignButton>
 
