@@ -1,5 +1,8 @@
+import InputField from '../components/InputField';
+import GoogleSignButton from '../components/GoogleSignButton';
 import { useState } from 'react';
 import { FcGoogle } from 'react-icons/fc';
+import SignInButton from '../components/SignInButton';
 
 const LogIn = () => {
   const [email, setEmail] = useState('');
@@ -71,7 +74,7 @@ const LogIn = () => {
               >
                 Email
               </label>
-              <input
+              <InputField
                 id="email"
                 type="email"
                 value={email}
@@ -91,7 +94,7 @@ const LogIn = () => {
               >
                 Password
               </label>
-              <input
+              <InputField
                 id="password"
                 type="password"
                 value={password}
@@ -114,12 +117,7 @@ const LogIn = () => {
             </div>
 
             {/* Sign In Button */}
-            <button
-              type="submit"
-              className="w-full bg-[#DB2777] text-white font-medium py-2 rounded-md hover:bg-[#db277893] transition duration-200"
-            >
-              Sign In
-            </button>
+            <SignInButton>Sign In</SignInButton>
           </form>
 
           {/* OR Divider */}
@@ -130,13 +128,10 @@ const LogIn = () => {
           </div>
 
           {/* Sign In With Google Button */}
-          <button
-            type="button"
-            className="w-full flex items-center justify-center bg-gray-900 text-white py-2 rounded-md hover:bg-gray-800 transition duration-200"
-          >
+          <GoogleSignButton type="button">
             <FcGoogle className="mr-2 text-lg" />
             <span className="text-sm font-medium">Continue with Google</span>
-          </button>
+          </GoogleSignButton>
 
           {/* Sign Up Link */}
           <div className="text-center mt-6">
