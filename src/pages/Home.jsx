@@ -1,50 +1,20 @@
 import { useState, useEffect } from 'react';
-import {
-  Search,
-  ArrowRightCircle,
-  MapPin,
-  CalendarDaysIcon,
-  Star,
-  Scissors,
-  UsersIcon,
-  ShoppingBag,
-} from 'lucide-react';
 import image1 from '../assets/saloonImage1.jpg';
 import image2 from '../assets/saloonImage2.jpg';
 import image3 from '../assets/saloonImage3.webp';
-import gasabo from '../assets/gasabo.jpg';
-import nyarugenge from '../assets/nyarugenge.png';
-import kicukiro from '../assets/kicukiroDistrict.webp';
 import testimonial from '../assets/testimonial.jpg';
 import SearchInput from '../components/SearchInput';
+import { ArrowRightCircle, MapPin, Search } from 'lucide-react';
+import {
+  districtDetails,
+  commonlyQuestionAsked,
+  howDetails,
+  serviceDetails,
+} from '../components/Datas';
 
 const Home = () => {
   const [isHoverd, setIsHoverd] = useState(false);
   const [currentImage, setCurrentImage] = useState(0);
-
-  const districtDetails = [
-    {
-      id: 1,
-      image: gasabo,
-      title: 'Gasabo District',
-      location: 'Kigali, Rwanda',
-      TatalSaloons: '45',
-    },
-    {
-      id: 2,
-      image: nyarugenge,
-      title: 'Nyarugenge District',
-      location: 'Kigali, Rwanda',
-      TatalSaloons: '45',
-    },
-    {
-      id: 3,
-      image: kicukiro,
-      title: 'Kicukiro District',
-      location: 'Kigali, Rwanda',
-      TatalSaloons: '45',
-    },
-  ];
 
   const images = [image1, image2, image3];
 
@@ -55,79 +25,6 @@ const Home = () => {
 
     return () => clearInterval(interval);
   }, [currentImage]);
-
-  const commonlyQuestionAsked = [
-    {
-      Question: 'Do salons offer home service?',
-      Answer:
-        'Some salons do! Look for the Home Service Available tag on the salon’s profile',
-    },
-    {
-      Question: ' Can I cancel or reschedule my appointment?',
-      Answer:
-        'Yes! You can cancel or reschedule your appointment through your account before the scheduled time.',
-    },
-    {
-      Question: 'How do I find salons near me?',
-      Answer:
-        'Use our search feature to find salons by district or location and choose the one that fits your needs.',
-    },
-    {
-      Question: 'What types of beauty services are available?',
-      Answer:
-        'Our partnered salons offer haircuts, styling, coloring, manicures, pedicures, facials, and more!',
-    },
-  ];
-
-  const HowDetails = [
-    {
-      id: 1,
-      number: '1',
-      icon: <Search />,
-      title: 'Find Nearby Salons',
-      description:
-        'Search for salons in your area and browse their services, reviews, and availability',
-    },
-    {
-      id: 2,
-      number: '2',
-      icon: <CalendarDaysIcon />,
-      title: 'Book Your Appointment',
-      description:
-        'Select your preferred service, date, and time to schedule your appointment.',
-    },
-    {
-      id: 3,
-      number: '3',
-      icon: <Star />,
-      title: 'Enjoy Your Service',
-      description:
-        'Visit the salon, enjoy your service, and leave a review to help others.',
-    },
-  ];
-
-  const serviceDetails = [
-    {
-      id: 1,
-      icon: <Scissors />,
-      title: 'Hair Cuts & Styling',
-    },
-    {
-      id: 2,
-      icon: <Star />,
-      title: 'Colors & Highlights',
-    },
-    {
-      id: 3,
-      icon: <UsersIcon />,
-      title: 'Treatment and Care',
-    },
-    {
-      id: 4,
-      icon: <ShoppingBag />,
-      title: 'Beauty Product',
-    },
-  ];
 
   return (
     <div className="bg-white container p-5 mx-auto px-4 md:px-8 lg:px-32 font-poppins">
@@ -181,21 +78,21 @@ const Home = () => {
             Connecting clients with salons has never been easier
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-12 mt-5 md:mt-10">
-            {HowDetails.map((HowDetail) => (
+            {howDetails.map((howDetail) => (
               <div
-                key={HowDetail.id}
+                key={howDetail.id}
                 className="bg-white w-full md:w-96 p-4 rounded border-2 border-gray-300 cursor-pointer transition-transform duration-300 hover:-translate-y-2 hover:shadow-lg hover:border-[#DB2777]"
               >
                 <div className="flex flex-col">
                   <div className="flex justify-between">
-                    <p className="text-[#DB2777]">{HowDetail.icon}</p>
-                    <p className="font-bold text-2xl">{HowDetail.number}</p>
+                    <p className="text-[#DB2777]">{howDetail.icon}</p>
+                    <p className="font-bold text-2xl">{howDetail.number}</p>
                   </div>
 
                   <div className="flex flex-col gap-4 mt-3">
-                    <h1 className="font-semibold text-xl">{HowDetail.title}</h1>
+                    <h1 className="font-semibold text-xl">{howDetail.title}</h1>
                     <p className="text-[#555555] font-medium text-sm">
-                      {HowDetail.description}
+                      {howDetail.description}
                     </p>
                   </div>
                 </div>
@@ -316,8 +213,6 @@ const Home = () => {
             Feel free to leave comment☺️
           </h1>
           <textarea
-            name=""
-            id=""
             className="w-80 md:w-1/2 p-4 bg-[#D9D9D9] text-[15px] h-28 resize-none border-2 border-[#33313E] rounded-lg outline-amber-800"
             placeholder="Leave Your Comment Here..."
           />
