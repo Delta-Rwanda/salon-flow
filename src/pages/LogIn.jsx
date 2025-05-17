@@ -165,7 +165,8 @@
 import InputField from '../components/InputField';
 import Button from '../components/Button';
 import { useState } from 'react';
-import GoogleIcon from '../images/GoogleIcon.png'
+import { FcGoogle } from 'react-icons/fc';
+
 
 
 
@@ -299,11 +300,11 @@ const LogIn = () => {
         label="Continue with Google"
         variant="google"
         
-        //icon={FcGoogle}
+        icon={FcGoogle}
         onClick={() => console.log("Google Sign In")}
         
-      >  <img src={GoogleIcon.png} alt="Description" />
-      </Button>
+       />
+      
           
           {/* <Button type="button" variant='secondary'>
             <img src={GoogleIcon} alt="Google logo" className="mr-3 h-[30px] w-[30px] " />
