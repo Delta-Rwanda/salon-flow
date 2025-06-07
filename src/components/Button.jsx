@@ -1,19 +1,41 @@
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 
-const Button = ({ label, type = 'submit' }) => {
+const Button = ({
+  type = 'button',
+  disabled = false,
+  onClick,
+  className = '',
+  children,
+  icon,
+}) => {
+  const baseStyles =
+    'w-full rounded font-bold py-2 flex items-center justify-center text-sm sm:text-sm transition-colors';
+
+  const combinedClasses = classNames(baseStyles, className, {
+    'cursor-not-allowed bg-gray-400': disabled,
+  });
+
   return (
     <button
       type={type}
-      className="px-4 py-2 bg-[#DB2777] rounded-md cursor-pointer font-semibold text-[#E6E6FA] hover:text-black  hover:bg-[#FFB6C1] text-sm w-full font-poppins sm:w-auto"
+      disabled={disabled}
+      onClick={onClick}
+      className={combinedClasses}
     >
-      {label}
+      {icon && <span className="mr-3 sm:mr-8">{icon}</span>}
+      {children}
     </button>
   );
 };
 
 Button.propTypes = {
-  label: PropTypes.string.isRequired,
-  type: PropTypes.oneOf(['button', 'submit', 'reset']),
+  type: PropTypes.string,
+  disabled: PropTypes.bool,
+  onClick: PropTypes.func,
+  className: PropTypes.string,
+  children: PropTypes.node.isRequired,
+  icon: PropTypes.node,
 };
 
 export default Button;

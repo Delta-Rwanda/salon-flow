@@ -3,7 +3,7 @@ import LandingPage from './pages/LandingPage';
 import About from './pages/About';
 import NotFound from './pages/NotFound';
 import Navigation from './components/Navigation';
-
+import Signup from './pages/Signup';
 const App = () => {
   return (
     <div>
@@ -17,6 +17,7 @@ const App = () => {
           </Routes>
         </div>
       </Router>
+      <Signup />
     </div>
   );
 };

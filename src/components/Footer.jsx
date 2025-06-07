@@ -91,6 +91,7 @@ const Footer = () => {
         {success && (
           <p className="text-green-500 text-sm text-left mb-3">{success}</p>
         )}
+
         <form
           onSubmit={handleSubmit}
           className="flex flex-col md:bg-[#9894B1] p-2 md:p-0 sm:p-2 rounded-md sm:flex-row items-center sm:bg-amber-50 bg-amber-50 sm:gap-2 gap-2 md:gap-0 w-full md:max-w-[360px]"
@@ -100,9 +101,20 @@ const Footer = () => {
             required
             placeholder="Enter your email"
             value={email}
+            className="px-4 py-2 rounded-md bg-[#9894B1] cursor-pointer sm:rounded-l-md sm:rounded-r-none focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm w-full font-poppins sm:w-64"
             onChange={(event) => setEmail(event.target.value)}
           />
-          <Button label={loading ? 'Loading...' : 'Subscribe'} type="submit" />
+          <Button
+            type="submit"
+            disabled={loading}
+            className={
+              loading
+                ? 'bg-gray-400'
+                : 'bg-pink-400 hover:bg-slate-600 hover:text-white'
+            }
+          >
+            {loading ? 'Creating Account...' : 'Subscribe'}
+          </Button>
         </form>
       </div>
       <div className="text-center text-sm px-4">
