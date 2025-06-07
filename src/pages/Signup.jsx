@@ -27,7 +27,7 @@ const Signup = () => {
     }
 
     if (password !== confirmPassword) {
-      setError('Password and confirm password are not the same!');
+      setError('Password and confirm password do not match!');
       return;
     }
 
@@ -47,109 +47,96 @@ const Signup = () => {
   }, [name, email, password, confirmPassword]);
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 px-4 sm:px-6 font-poppins">
-      <div className="bg-white shadow-xl rounded-lg w-full max-w-[420px] lg:max-w-[600px] xl:max-w-[700px] transition-all duration-300">
-        <div className="w-full px-6 sm:px-8 md:px-10 py-8 sm:py-10">
-          {/* Aligned header section */}
-          <div className="w-full sm:w-1/2 mx-auto">
-            <h2 className="text-base sm:text-lg font-bold mb-1 text-left">
-              SALON FLOW
-            </h2>
-            <h3 className="text-sm sm:text-base font-semibold mb-1 text-left">
-              Account Signup-Form
-            </h3>
-            <h4 className="italic text-xs sm:text-sm mb-3 text-left">
-              Already have an account?{' '}
-              <a href="/signin" className="text-red-500 hover:underline">
-                Sign in
-              </a>
-            </h4>
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 px-4 font-poppins">
+      <div className="bg-white shadow-lg rounded-lg w-full max-w-md p-8">
+        <h2 className="text-xl font-bold mb-1 text-left">SALON FLOW</h2>
+        <h3 className="text-base font-semibold mb-1 text-left">
+          Account Signup-Form
+        </h3>
+        <p className="italic text-sm mb-3 text-left">
+          Already have an account?{' '}
+          <a href="/signin" className="text-pink-600 hover:underline">
+            Sign in
+          </a>
+        </p>
 
-            {error && (
-              <p className="text-red-500 text-sm text-left mb-3">{error}</p>
-            )}
-            {success && (
-              <p className="text-green-500 text-sm text-left mb-3">{success}</p>
-            )}
+        {error && <p className="text-red-500 text-sm mb-3">{error}</p>}
+        {success && <p className="text-green-500 text-sm mb-3">{success}</p>}
+
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <FormInput
+            label="Name"
+            id="name"
+            value={name}
+            onChange={(event) => setName(event.target.value)}
+            required
+            className="bg-[#9894B1] text-white"
+          />
+          <FormInput
+            label="Email"
+            id="email"
+            type="email"
+            value={email}
+            onChange={(event) => setEmail(event.target.value)}
+            required
+            className="bg-[#9894B1] text-white"
+          />
+          <FormInput
+            label="Password"
+            id="password"
+            type="password"
+            value={password}
+            onChange={(event) => setPassword(event.target.value)}
+            required
+            className="bg-[#9894B1] text-white"
+          />
+          <FormInput
+            label="Confirm Password"
+            id="confirmPassword"
+            type="password"
+            value={confirmPassword}
+            onChange={(event) => setConfirmPassword(event.target.value)}
+            required
+            className="bg-[#9894B1] text-white"
+          />
+
+          <Button
+            type="submit"
+            disabled={loading}
+            className={`w-full mt-4 text-white font-semibold ${
+              loading
+                ? 'bg-gray-400 cursor-not-allowed'
+                : 'bg-pink-500 hover:bg-pink-700'
+            }`}
+          >
+            {loading ? 'Creating Account...' : 'Sign Up'}
+          </Button>
+
+          <div className="flex items-center my-4">
+            <div className="flex-grow border-t border-gray-400" />
+            <span className="mx-3 text-xs font-semibold">OR</span>
+            <div className="flex-grow border-t border-gray-400" />
           </div>
 
-          {/*Form section*/}
-          <form onSubmit={handleSubmit} className="w-full flex justify-center">
-            <div className="w-full sm:w-1/2">
-              <FormInput
-                label="Name"
-                id="name"
-                value={name}
-                onChange={(event) => setName(event.target.value)}
-                required
+          <Button
+            className="bg-slate-900 text-white text-sm hover:bg-blue-600 w-full"
+            icon={
+              <img
+                src="/assets/Google.png"
+                alt="Google Logo"
+                className="w-5 h-5"
               />
-              <FormInput
-                label="Email"
-                id="email"
-                type="email"
-                value={email}
-                onChange={(event) => setEmail(event.target.value)}
-                required
-              />
-              <FormInput
-                label="Password"
-                id="password"
-                type="password"
-                value={password}
-                onChange={(event) => setPassword(event.target.value)}
-                required
-              />
-              <FormInput
-                label="Confirm Password"
-                id="confirm-password"
-                type="password"
-                value={confirmPassword}
-                onChange={(event) => setConfirmPassword(event.target.value)}
-                required
-              />
-
-              {/*button to handle form submission */}
-              <Button
-                type="submit"
-                disabled={loading}
-                className={
-                  loading
-                    ? 'bg-gray-400'
-                    : 'bg-pink-400 hover:bg-slate-600 hover:text-white mt-8'
-                }
-              >
-                {loading ? 'Creating Account...' : 'Sign up'}
-              </Button>
-
-              <div className="flex items-center my-4">
-                <div className="flex-grow border-t border-gray-400"></div>
-                <span className="mx-3 text-xs font-semibold">OR</span>
-                <div className="flex-grow border-t border-gray-400"></div>
-              </div>
-
-              <Button
-                className="bg-slate-900 text-white hover:bg-blue-400 text-xs sm:text-sm"
-                icon={
-                  <img
-                    src="/assets/Google.png"
-                    alt="Google Logo"
-                    className="w-5 h-5"
-                  />
-                }
-              >
-                <span className="hidden sm:inline">Continue with Google</span>
-              </Button>
-            </div>
-          </form>
-        </div>
+            }
+          >
+            Continue with Google
+          </Button>
+        </form>
       </div>
 
-      {/*Footer section */}
-      <footer className="mt-4 text-center text-[10px] sm:text-[8px] text-gray-500 leading-tight max-w-[420px] px-6 sm:px-10 mb-7">
+      <footer className="mt-6 text-center text-xs text-gray-500 max-w-md px-4">
         <p>
-          SalonFlow is part of SalonFlow Inc., the leading online platform for
-          salon booking and time-saving services. © 2025 SalonFlow. All rights
-          reserved.
+          SalonFlow is part of SalonFlow Inc., the leading platform for salon
+          booking. © 2025 SalonFlow. All rights reserved.
         </p>
       </footer>
     </div>
